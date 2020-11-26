@@ -15,7 +15,6 @@ from django.urls import reverse_lazy
 from config.views import OwnerOnlyMixin
 
 
-#--- ListView
 class PostLV(ListView):
     model = Post
     template_name = 'blog/post_all.html'
@@ -23,7 +22,6 @@ class PostLV(ListView):
     paginate_by = 2
 
 
-#--- DetailView
 class PostDV(DetailView):
     model = Post
 
@@ -36,7 +34,6 @@ class PostDV(DetailView):
         return context
 
 
-#--- ArchiveView
 class PostAV(ArchiveIndexView):
     model = Post
     date_field = 'modify_dt'
@@ -63,7 +60,7 @@ class PostTAV(TodayArchiveView):
     date_field = 'modify_dt'
 
 
-#--- Tag View
+
 class TagCloudTV(TemplateView):
     template_name = 'taggit/taggit_cloud.html'
 
@@ -81,7 +78,6 @@ class TaggedObjectLV(ListView):
         return context
 
 
-#--- FormView
 class SearchFormView(FormView):
     form_class = PostSearchForm
     template_name = 'blog/post_search.html'
@@ -95,14 +91,13 @@ class SearchFormView(FormView):
         context['search_term'] = searchWord
         context['object_list'] = post_list
 
-        return render(self.request, self.template_name, context)   # No Redirection
+        return render(self.request, self.template_name, context)
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'slug', 'description', 'content', 'tags']
     initial = {'slug': 'auto-filling-do-not-input'}
-    #fields = ['title', 'description', 'content', 'tags']
     success_url = reverse_lazy('blog:index')
 
     def form_valid(self, form):

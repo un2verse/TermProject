@@ -7,12 +7,12 @@ from django.contrib.auth.mixins import AccessMixin
 from django.views.defaults import permission_denied
 
 
-#--- Homepage
+
 class HomeView(TemplateView):
     template_name = 'home.html'
 
 
-#--- User Creation
+
 class UserCreateView(CreateView):
     template_name = 'registration/register.html'
     form_class = UserCreationForm

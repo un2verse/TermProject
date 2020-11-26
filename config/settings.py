@@ -26,7 +26,7 @@ SECRET_KEY = 'qfj2sv&9uvqc=ur@kqn-r^s_pv^&ku-fid@z)rwz7s%k6fxe@v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'un2verse.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'h4ppy.pythonanywhere.com', 'localhost']
 
 
 # Application definition

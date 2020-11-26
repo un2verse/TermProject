@@ -134,3 +134,6 @@ TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
 
 LOGIN_REDIRECT_URL = '/'
+
+DISQUS_SHORTNAME = 'un2verse.disqus.com'
+DISQUS_MY_DOMAIN = 'http://h4ppy.pythonanywhere.com/'
